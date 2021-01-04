@@ -2,3 +2,10 @@
 phase two project 
 
 GolfLive 
+
+Models: 
+     - Users
+     - Instructors
+     - Lessons
+     - Driving Range
+     - Location
