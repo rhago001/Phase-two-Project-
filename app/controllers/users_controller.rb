@@ -18,9 +18,16 @@ class UsersController < ApplicationController
    end
 
    def edit
+      @user = User.new(params[:id])
+
    end
 
    def update
+      @user = User.new(params[:id])
+      @user.update(params[:id])
+      redirect_to user_path(@user)
+   else
+      render :edit
    end
 
    def destroy
