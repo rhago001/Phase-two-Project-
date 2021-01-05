@@ -10,16 +10,10 @@ class InstructorsController < ApplicationController
 
 
 
-   def edit
-   end
-
-   def update
-   end
-
-
    private
 
    def instructor_params
+      params.require(:instructor).permit(:first_name, :last_name, :email, :password)
    end
    
 end
