@@ -1,1 +1,21 @@
-New User Page
+
+
+
+
+<div class="container">
+<div class="row justify-content-left">
+<h1> Profile </h1>
+<hr>
+<h5>Full Name: </h4><p><%= @user.full_name %></p>
+<h5>Email: <%= @user.email %></h5>
+<h5>Phone Number: <%= @user.phone_number %></h5>
+
+</hr>
+<hr>
+
+<%= button_to "Edit", edit_user_path %> 
+<p style="color:red"><%= button_to "delete", logout_path, method: :delete %> </p>
+
+</hr>
+</div>
+</div>
