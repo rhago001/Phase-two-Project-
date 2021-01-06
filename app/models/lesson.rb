@@ -1,7 +1,7 @@
 class Lesson < ApplicationRecord
    # belongs_to :user
-   # belongs_to :instructor
-   # belongs_to :location
+   belongs_to :instructor
+   belongs_to :location
 
    validates :date, presence: true 
    validates_format_of :date, presence: true, :with => /\d{2}\/\d{2}\/\d{4}/, :message => "must be in the following format: mm/dd/yyyy"

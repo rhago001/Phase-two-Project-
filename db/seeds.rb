@@ -69,7 +69,7 @@ judy = User.create(first_name: "Judy", last_name: "Quattrone", email: "jquattron
 jon = User.create(first_name: "Jon", last_name: "Wilson", email: "jwilson@gmail.com", phone_number: "813-282-2998", password: "jon123")
 
 
-lesson1 = Lesson.create(date: "01/09/2021", time: "10:00am", instructor_id: tiger.id, user_id: judy.id, location_id: ashburn.id, skill_level: "Beginner", hand_position: "right", lesson_name: "Front 9: New Golfers")
-lesson2 = Lesson.create(date: "01/10/2021", time: "2:00pm", instructor_id: amy.id, user_id: jon.id, location_id: alexandria.id, skill_level: "Intermediate", hand_position: "left", lesson_name: "Back 9: Beginner Golfers")
-lesson3 = Lesson.create(date: "01/12/2021", time: "9:00am", instructor_id: tiger.id, user_id: jon.id, location_id: ashburn.id, skill_level: "Intermediate", hand_position: "left", lesson_name: "Advanced Golfers")
+Lesson.create(date: "01/09/2021", time: "10:00am", instructor_id: tiger.id, user_id: judy.id, location_id: ashburn.id, skill_level: "Beginner", hand_position: "right", lesson_name: "Front 9 - New Golfers")
+Lesson.create(date: "01/10/2021", time: "2:00pm", instructor_id: amy.id, user_id: jon.id, location_id: alexandria.id, skill_level: "Intermediate", hand_position: "left", lesson_name: "Back 9 - Beginner Golfers")
+Lesson.create(date: "01/12/2021", time: "9:00am", instructor_id: tiger.id, user_id: jon.id, location_id: ashburn.id, skill_level: "Intermediate", hand_position: "left", lesson_name: "Tee-Up - Intermediate")
 
