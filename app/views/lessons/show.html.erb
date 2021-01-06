@@ -1,26 +1,44 @@
-<h2>Lesson Confirmation</h2>
+<br>
+<center><h2>Lesson Confirmation</h2></center>
+<br>
+<table align="center">
+     
+   <tr>
+      <td>
+      <hr><br>
+      Hi <b>user_name</b>, your lesson has been confirmed! 
+      <br><br>
+      <b>Lesson:</b> &nbsp; <%= @lesson.lesson_name %> <br>
+      <b>Date:</b> &nbsp; <%= @lesson.date %> <br>
+      <b>Time:</b> &nbsp; <%= @lesson.time %> <br>
+      <b>Skill Level:</b> &nbsp; <%= @lesson.skill_level %> <br>
+      <b>Hand Position:</b> &nbsp; <%= @lesson.hand_position %> <br>
+      <br>
+     
+      <b>Instructor:</b> &nbsp; <%= @lesson.hand_position %> <br>
+      <%# <% end %> 
+      <b>Location:</b> &nbsp; <%= @lesson.hand_position %> <br>
 
-<p>
-<%# <% @lessons.each do |lesson| %> 
+      <br>
+      </td>
+   </tr>
 
-<% @lesson.user.each do |user| %>
-<%= User.full_name %>, the following lesson has been booked: <br>
+   <tr>
+      <td>
+         <hr><br>
+      <font size="2px">
+      <b>Want to book another lesson? <%= link_to 'Book Lesson', new_lesson_path %></b><br>
+      <br>
+      <b>Need to make changes to this lesson?</b><br>
+      <%= link_to "Update Lesson", edit_lesson_path %> <br> &nbsp;&nbsp;&nbsp; 
+      <%= button_to "Delete Lesson", lesson_path, method: :delete %>
+      <br><br>
+      
+      </font>
+      </td>
+   </tr>
+  
+   
+</table>
 
 
-<% end %>
-
-Date: <%= lesson.date %><br>
-Time: <%= lesson.time %><br>
-Skill Level: <%= lesson.skill_level %><br>
-Hand Position: <%= lesson.hand_position %><br>
-
-<% @lesson.instructors.each do |instructor| %>
-Instructor: <%= instructor.full_name %><br>
-<% end %>
-
-<% @lesson.locations.each do |location| %>
-Location: <%= location.city_state %><br>
-<% end %>
-
-
-</p>

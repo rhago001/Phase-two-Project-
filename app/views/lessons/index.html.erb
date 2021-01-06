@@ -1,4 +1,110 @@
-<h1>All Available Lessons</h1>
+<!DOCTYPE html>
+<html >
+<head>
+  <style>
+      .flex-container {
+         display: flex;
+         align-items: center; /* Use another value to see the result */
+         width: 100%;
+         height: 400px;
+         background-color: #1faadb;
+      }
+      .flex-container > div {
+         padding-right: 30px; 
+         padding-left: 30px;
+         width: 40%;
+         height: 350px;
+         margin: 10px;
+         border-radius: 4px;
+         background-color: #8ebf42;
+         font-size: 12px;
+      }
+      h2 {
+         font-size: 35px;
+      }
+      h3 {
+         font-size: 18px;
+         font-weight: bold; 
+         text-align: center;
+      }
+    </style>
+  </head>
+   <body>
+      <br>
+      <center><h2>GolfLive Lessons</h2></center>
+    
+    <div class="flex-container">
+      <div>
+         <p>
+         <h3>Front 9: New Golfers</h3><br>
+         The <i><b>Front 9</b></i> is designed for the new golfer. 
+         Ideal for someone that has never held a golf club before or brand new to golf.
+         Students will learn the fundamentals of the full swing, putting and chipping. 
+         Basic rules, etiquette, pace of play and golf terminology will also be covered during this lesson.
+         <br><br>
+         <b>Duration:</b> 1 hour<br>
+         <b>Price:</b> $60/lesson<br><br>
 
-<% @lessons.each do |lesson| %>
-<%= lesson.%>
+         <b><%= link_to 'Click to Book Lesson', new_lesson_path %></b>
+         <br>
+         </p>
+      </div>
+
+      <div>
+         <p>
+         <h3>Back 9: Beginner Golfers</h3><br>
+         The <i><b>Back 9</b></i> is designed for the golfer with a bit of experience; 
+         whether from instruction, driving range, or just being around the game.
+         Students will learn the fundamentals of the full swing, putting and chipping.
+         This class is designed as a follow-up for students who have taken the "Front 9" 
+         program or have played golf before. 
+      
+         <br><br>
+         <b>Duration:</b> 1 hour<br>
+         <b>Price:</b> $60/lesson<br><br>
+
+          <b><%= link_to 'Click to Book Lesson', new_lesson_path %></b>
+         </p>
+      </div>
+ 
+       <div>
+         <p>
+         <h3>Tee-Up: Intermediate</h3><br>
+         The <i><b>Tee-Up: Intermediate</b></i> is designed for the golfer who has taken the 
+         "Back 9" level or has had some previous technical instruction. This class focuses on 
+         what and how to practice properly and teaches the student how to better manager their 
+         game on the course when in different situations. 
+         
+         <br><br>
+         <b>Duration:</b> 2 hours<br>
+         <b>Price:</b> $80/lesson<br><br>
+
+          <b><%= link_to 'Click to Book Lesson', new_lesson_path %></b>
+         </p>
+      </div>
+
+
+      <div>
+         <p>
+         <h3>Tee-Up: Experienced</h3><br>
+         The <i><b>Tee-Up: Experienced</b></i> lesson is geared towards golfers who have had 
+         previous technical instruction and designed to establish the fundamentals to break 100 
+         and consistently score in the 90's. Students will have their golf swing videoed and 
+         analyzed, work on their short game and spend time on the golf course to improve course 
+         management skills.
+         
+         <br><br>
+         <b>Duration:</b> 2 hours<br>
+         <b>Price:</b> $100/lesson<br><br>
+
+          <b><%= link_to 'Click to Book Lesson', new_lesson_path %></b>
+         </p>
+      </div>
+
+    </div>
+  
+
+
+
+</body>
+</html>
