@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2021_01_04_180246) do
     t.string "email"
     t.string "password_digest"
     t.integer "location_id"
+    t.string "img_url"
+    t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -41,6 +43,7 @@ ActiveRecord::Schema.define(version: 2021_01_04_180246) do
     t.integer "location_id"
     t.string "skill_level"
     t.string "hand_position"
+    t.string "lesson_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -57,7 +60,7 @@ ActiveRecord::Schema.define(version: 2021_01_04_180246) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.string "phone"
+    t.string "phone_number"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

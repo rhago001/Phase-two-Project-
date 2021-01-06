@@ -8,6 +8,7 @@ class CreateLessons < ActiveRecord::Migration[6.0]
       t.integer :location_id
       t.string :skill_level
       t.string :hand_position
+      t.string :lesson_name
 
       t.timestamps
     end

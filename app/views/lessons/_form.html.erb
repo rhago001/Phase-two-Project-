@@ -1,4 +1,4 @@
-
+<br>
 <ul>
 <% if @lesson.errors.any? %>
   <% @lesson.errors.full_messages.each do |err| %>
@@ -6,20 +6,22 @@
     </ul>
     <%end%>
  <%end %>
-
-<%= form_for @lesson do |f| %>
+<center><%= form_for @lesson do |f| %>
  
-   Date: <%=f.date_field :date %> <br />
- 
-   <br/>
-   Time: <%=f.time_field :time %><br />
+   <%# Date: <%=f.date_select :date %> 
+  <%# Date: <%=f.date_field :date %> 
+  Date: <%= f.text_field :date %> <br />
+  </br>
+  Time: <%= f.time_field :time %> <br />
    </br>
-   Instructor: <%= f.collection_select :instructor_id, Instructor.all, :id, :first_name %><br />
+  Lesson Name: <%= f.select :skill_level, [ 'Front Nine New Golfers','Back Nine Beginner Golfer','Advanced' ], :prompt => 'Select One' %> <br />
+  </br>
+  Instructor: <%= f.collection_select :instructor_id, Instructor.all, :id, :full_name %><br />
    <br/>
-   Location: <%=f.collection_select :location_id, Location.all, :id, :state %> <br />
-    <br/>
-   Skill Level: <%= f.select :from, [ 'Beginner','Intermediate','Advanced' ], :prompt => 'Select One' %>
-
+  Location: <%=f.collection_select :location_id, Location.all, :id, :city_state %> <br />
+  <br/>
+  Skill Level: <%= f.select :skill_level, [ 'Beginner','Intermediate','Advanced' ], :prompt => 'Select One' %> <br />
+   
 
    <%=f.submit %>
  <%end %>

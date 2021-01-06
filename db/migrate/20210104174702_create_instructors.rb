@@ -6,6 +6,8 @@ class CreateInstructors < ActiveRecord::Migration[6.0]
       t.string :email
       t.string :password_digest
       t.integer :location_id
+      t.string :img_url
+      t.text :bio
 
       t.timestamps
     end

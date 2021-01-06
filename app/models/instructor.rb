@@ -9,4 +9,9 @@ class Instructor < ApplicationRecord
    validates :password, presence: true, length: { in: 6..20 }
 
    has_secure_password
+
+   def full_name
+      "#{first_name} #{last_name}"
+   end
+   
 end

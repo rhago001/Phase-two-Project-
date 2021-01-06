@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
  resources :users, except: [:new]
  resources :instructors, only: [:show, :index]
+ resources :lessons
  
 
  get 'signup', to: "users#new", as: 'signup'

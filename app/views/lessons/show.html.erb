@@ -1,1 +1,26 @@
-this is show page
+<h2>Lesson Confirmation</h2>
+
+<p>
+<%# <% @lessons.each do |lesson| %> 
+
+<% @lesson.user.each do |user| %>
+<%= User.full_name %>, the following lesson has been booked: <br>
+
+
+<% end %>
+
+Date: <%= lesson.date %><br>
+Time: <%= lesson.time %><br>
+Skill Level: <%= lesson.skill_level %><br>
+Hand Position: <%= lesson.hand_position %><br>
+
+<% @lesson.instructors.each do |instructor| %>
+Instructor: <%= instructor.full_name %><br>
+<% end %>
+
+<% @lesson.locations.each do |location| %>
+Location: <%= location.city_state %><br>
+<% end %>
+
+
+</p>
