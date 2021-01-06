@@ -17,6 +17,10 @@
    Instructor: <%= f.collection_select :instructor_id, Instructor.all, :id, :first_name %><br />
    <br/>
    Location: <%=f.collection_select :location_id, Location.all, :id, :state %> <br />
+    <br/>
+   Skill Level: <%= f.select :from, [ 'Beginner','Intermediate','Advanced' ], :prompt => 'Select One' %>
+
+
    <%=f.submit %>
  <%end %>
  
