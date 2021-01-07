@@ -39,7 +39,7 @@ class LessonsController < ApplicationController
    def destroy
       @lesson = Lesson.find(params[:id])
       @lesson.destroy
-      redirect_to user_path(@user)
+      redirect_to user_path(session[:id])
    end
 
    private
