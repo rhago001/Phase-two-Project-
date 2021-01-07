@@ -1,6 +1,6 @@
 class Instructor < ApplicationRecord
    has_many :lessons
-   has_many :students, through: :lessons
+   has_many :users, through: :lessons
    belongs_to :location
 
    validates :first_name, presence: true 
@@ -15,6 +15,7 @@ class Instructor < ApplicationRecord
    end
 
    def instructor_location
+      
       city = self.lessons.select { |lesson| lesson.city }
    end
 
