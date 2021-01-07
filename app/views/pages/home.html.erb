@@ -3,43 +3,68 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-subheading">Welcome To GolfLive!</div>
-                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+                <div class="masthead-subheading">Welcome To </div>
+                <div class="masthead-heading text-uppercase">GolfLive!</div>
                 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
             </div>
         </header>
+       
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Lessons</h2>
+                    <h3 class="section-subheading text-muted"></h3>
                 </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
+                <div class="row text-left">
+                    <div class="col-md-3">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                            <i class="fas fa-golf-ball fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">E-Commerce</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <h4 class="my-3"><%=link_to "#{Lesson.first.lesson_name}", lessons_path %></h4>
+                        <p class="text-muted">is designed for the new golfer. 
+                        Ideal for someone that has never held a golf club before or brand new to golf.
+                        Students will learn the fundamentals of the full swing, putting and chipping. 
+                        Basic rules, etiquette, pace of play and golf terminology will also be covered during this lesson.</p>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                            <i class="fas fa-golf-ball fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Responsive Design</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <h4 class="my-3"><%=link_to "#{Lesson.second.lesson_name}", lessons_path %></h4>
+                        <p class="text-muted">is designed for the golfer with a bit of experience; 
+                        whether from instruction, driving range, or just being around the game.
+                        Students will learn the fundamentals of the full swing, putting and chipping.
+                        This class is designed as a follow-up for students who have taken the "Front 9" 
+                        program or have played golf before.</p>
                     </div>
-                    <div class="col-md-4">
+                    
+                    <div class="col-md-3">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                            <i class="fas fa-golf-ball  fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Web Security</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <h4 class="my-3"><%=link_to "#{Lesson.third.lesson_name}", lessons_path %></h4>
+                        <p class="text-muted">is designed for the golfer who has taken the 
+                        "Back 9" level or has had some previous technical instruction. This class focuses on 
+                        what and how to practice properly and teaches the student how to better manager their 
+                        game on the course when in different situations. </p>
                     </div>
+
+                    <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-golf-ball fa-stack-1x fa-inverse"></i>
+                     </span>
+                     <h4 class="my-3"><%=link_to "Tee-Up: Experienced", lessons_path%></h4>
+                     <p class="text-muted">lesson is geared towards golfers who have had 
+                     previous technical instruction and designed to establish the fundamentals to break 100 
+                     and consistently score in the 90s. Students will have their golf swing videoed and 
+                     analyzed, work on their short game and spend time on the golf course to improve course 
+                     management skills.</p>
+                     </div>
                 </div>
             </div>
         </section>
@@ -200,6 +225,14 @@
                 </ul>
             </div>
         </section>
+
+        
+
+
+
+
+        
+
         <!-- Team-->
         <section class="page-section bg-light" id="team">
             <div class="container">
@@ -210,9 +243,11 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="startbootstrap-agency-pages/assets/img/team/1.jpg" alt="" />
-                            <h4>Kay Garland</h4>
-                            <p class="text-muted">Lead Designer</p>
+                            <img class="mx-auto rounded-circle" src="startbootstrap-agency-pages/assets/img/team/tiger.jpg" alt="" />
+                    
+                            <h4><%= link_to "Tiger Woods", instructor_path(Instructor.first.id) %></h4>
+                                                       
+                            <p class="text-muted">Lead Instructor</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -220,9 +255,9 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="startbootstrap-agency-pages/assets/img/team/2.jpg" alt="" />
-                            <h4>Larry Parker</h4>
-                            <p class="text-muted">Lead Marketer</p>
+                            <img class="mx-auto rounded-circle" src="startbootstrap-agency-pages/assets/img/team/wie.jpg" alt="" />
+                            <h4><%=link_to "Michelle Wie", instructor_path(Instructor.second.id) %></h4>
+                            <p class="text-muted">Instructor</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -230,9 +265,42 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="startbootstrap-agency-pages/assets/img/team/3.jpg" alt="" />
-                            <h4>Diana Petersen</h4>
-                            <p class="text-muted">Lead Developer</p>
+                            <img class="mx-auto rounded-circle" src="startbootstrap-agency-pages/assets/img/team/kan.jpg" alt="" />
+                            <h4><%=link_to "Danielle Kang", instructor_path(Instructor.third.id) %></h4>
+                            <p class="text-muted">Instructor</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="startbootstrap-agency-pages/assets/img/team/dustin.jpg" alt="" />
+                            <h4><%=link_to "Dustin Johnson", instructor_path(Instructor.fourth.id) %></h4>
+                            <p class="text-muted">Instructor</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="startbootstrap-agency-pages/assets/img/team/amy.jpg" alt="" />
+                            <h4><%=link_to "Amy Olson", instructor_path(Instructor.fifth.id) %></h4>
+                            <p class="text-muted">Instructor</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="startbootstrap-agency-pages/assets/img/team/justin.jpg" alt="" />
+                            <h4><%=link_to "Justin Thomas", instructor_path(6) %></h4>
+                            <p class="text-muted">Instructor</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>

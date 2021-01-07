@@ -1,10 +1,26 @@
-<h1>New User Sign-Up Form</h1>
+<!DOCTYPE html>
+<html >
+<head>
+  <style>
+      .outer{
+         display: flex;
+         align-items: center; /* Use another value to see the result */
+         width: 100%;
+         height: 400px;
+         background-color: #1faadb;
+      }
+      </style>
+      </head>
+      <body>
+</br></br></br></br></br></br></br>
+<center><h1>New User Sign-Up Form</h1></center>
   
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-10">
 
 <ul>
+<div class="outer">
 <% if @user.errors.any? %>
   <% @user.errors.full_messages.each do |err| %>
     <li style="color:red"> <%=err %></li>
@@ -12,7 +28,7 @@
     <%end%>
  <%end %>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, class: "shadow p-3 mb-3 bg-info rounded" do |f| %>
   <div class="form-group row">
     <%= f.label :first_name, class: "col-2 col-form-label text-light" %>
     <div class="col-7">
@@ -61,3 +77,6 @@
 </div>
 </div>
 </div>
+</div>
+</body>
+</html>

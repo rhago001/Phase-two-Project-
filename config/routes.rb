@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   root 'pages#home'
 
  resources :users, except: [:new]
- resources :instructors, only: [:show, :index]
+ resources :instructors, only: [:index]
  resources :lessons, only: [:index, :show, :new, :create, :edit, :delete]
- 
 
+
+ get 'back9', to: "lessons#back9", as: "back9"
+  get '/instructor/:id', to: "instructors#show", as: 'instructor'
  get 'signup', to: "users#new", as: 'signup' 
  get 'login', to: "sessions#new", as: 'login'
  post 'login', to: "sessions#create"
