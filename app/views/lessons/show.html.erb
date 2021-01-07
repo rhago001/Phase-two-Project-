@@ -6,7 +6,8 @@
    <tr>
       <td>
       <hr><br>
-      Hi <b>user_name</b>, your lesson has been confirmed! 
+   
+      Hi <b><%= @lesson.user.first_name %></b>, your lesson has been confirmed! 
       <br><br>
       <b>Lesson:</b> &nbsp; <%= @lesson.lesson_name %> <br>
       <b>Date:</b> &nbsp; <%= @lesson.date %> <br>
@@ -15,9 +16,9 @@
       <b>Hand Position:</b> &nbsp; <%= @lesson.hand_position %> <br>
       <br>
      
-      <b>Instructor:</b> &nbsp; <%= @lesson.hand_position %> <br>
-      <%# <% end %> 
-      <b>Location:</b> &nbsp; <%= @lesson.hand_position %> <br>
+      <b>Instructor:</b> &nbsp; <%= @lesson.instructor.full_name %> <br>
+     
+      <b>Location:</b> &nbsp; <%= @lesson.location.city_state %> <br>
 
       <br>
       </td>
@@ -31,7 +32,7 @@
       <br>
       <b>Need to make changes to this lesson?</b><br>
       <%= link_to "Update Lesson", edit_lesson_path %> <br> &nbsp;&nbsp;&nbsp; 
-      <%= button_to "Delete Lesson", lesson_path, method: :delete %>
+      <%= button_to "Delete Lesson", lesson_path(@lesson), method: :delete %>
       <br><br>
       
       </font>

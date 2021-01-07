@@ -14,10 +14,9 @@ class Instructor < ApplicationRecord
       "#{first_name} #{last_name}"
    end
 
-   def instructor_location
-      
-      city = self.lessons.select { |lesson| lesson.city }
-   end
+   # def instructor_location
+   #    city = self.lessons.select { |lesson| lesson.city }
+   # end
 
    
 end

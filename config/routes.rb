@@ -5,15 +5,15 @@ Rails.application.routes.draw do
 
  resources :users, except: [:new]
  resources :instructors, only: [:index]
- resources :lessons, only: [:index, :show, :new, :create, :edit, :delete]
+ resources :lessons, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
 
- get 'back9', to: "lessons#back9", as: "back9"
-  get '/instructor/:id', to: "instructors#show", as: 'instructor'
+ get '/instructor/:id', to: "instructors#show", as: 'instructor'
  get 'signup', to: "users#new", as: 'signup' 
  get 'login', to: "sessions#new", as: 'login'
  post 'login', to: "sessions#create"
  delete 'logout', to: "sessions#destroy", as: 'logout'
+#  delete 'delete', to: "lessons#destroy", as: 'cancel'
 
   
 
