@@ -1,6 +1,17 @@
+<br><br><br><br><br><br>
+<center><h1>Meet Our Instructors</h1></center>
+<br><br>
 <% @instructors.each do |instructor| %>
-<ul>
-   <li><%= instructor.first_name %><li>
-</ul>
+
+  
+      <img src="<%= instructor.img_url %>" width = 300px align = "left"/><br>
+      <%= link_to 'My Profile', user_path(@current_user.id) %>
+      
+<table>
+   <tr>
+      <td></td>
+   </tr>
+</table>
+
 
 <% end %>

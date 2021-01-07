@@ -1,1 +1,18 @@
-<h1><%= @instructor.first_name %></h1>
+<br>
+<center><h2>Meet Our Pro Instructor, <%= @instructor.full_name %>!</h2></center>
+
+<hr>
+
+<img src="<%= @instructor.img_url %>" width = 300px align = "left"/><br>
+<font size="3">
+<b>Name:</b> &nbsp; <%= @instructor.full_name %> <br>
+<br>
+<b>Bio: </b> &nbsp; <%= @instructor.bio %><br>
+<br>
+<b>Email: </b> &nbsp; <%= @instructor.email %><br>
+<br>
+<b>GolfLive Location: </b> &nbsp; <%= @instructor.instructor_location %><br>
+
+</font>
+<hr>
+<%= link_to "Meet All Our Instructors", instructors_path %>
