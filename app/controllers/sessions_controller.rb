@@ -2,13 +2,17 @@ class SessionsController < ApplicationController
 
   def new 
     @user = User.new
+    
   end 
 
   def create
     @user = User.find_by(email: params[:user][:email])
-     if @user && @user.authenticate(password: params[:user][:password])
+    
+
+     if @user && @user.authenticate(params[:user][:password])
+      
       session[:id] = @user.id
-      redirect_to user_path(@user), notice: "Logged in!"
+      redirect_to user_path(@user)
      else
       flash[:errors] ="Email or Password is incorrect"
       redirect_to login_path
@@ -17,7 +21,8 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear
-    redirect_to login_path, notice: "Logged out!"
+    redirect_to root_path
+
 
   end 
 
