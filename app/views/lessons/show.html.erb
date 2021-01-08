@@ -1,40 +1,65 @@
 <br><br><br><br><br><br>
 <center><h2>Lesson Confirmation</h2></center>
-<br>
-<table align="center">
-     
-   <tr>
-      <td>
-      <hr><br>
-   
-      Hi <b><%= @lesson.user.first_name %></b>, your lesson has been confirmed! 
-      <br><br>
-      <b>Lesson:</b> &nbsp; <%= @lesson.lesson_name %> <br>
-      <b>Date:</b> &nbsp; <%= @lesson.date %> <br>
-      <b>Time:</b> &nbsp; <%= @lesson.time %> <br>
-      <b>Skill Level:</b> &nbsp; <%= @lesson.skill_level %> <br>
-      <b>Hand Position:</b> &nbsp; <%= @lesson.hand_position %> <br>
-      <br>
-     
-      <b>Instructor:</b> &nbsp; <%= @lesson.instructor.full_name %> <br>
-     
-      <b>Location:</b> &nbsp; <%= @lesson.location.city_state %> <br>
+<br><br>
 
-      <br>
-      </td>
+   <center><font size="5px">
+   Hi <b><%= @lesson.user.first_name %></b>, your lesson has been confirmed! 
+   </font></center>
+   <br>
+   <table style="width:400px" cellpadding="2px" align="center">
+      <tr>
+      <th>Date:</th>
+      <td><%= @lesson.date %></td>
    </tr>
+   <tr>
+      <th>Time:</th>
+      <td><%= @lesson.time %></td>
+   </tr>
+   <tr>
+      <th style="width:40%">Lesson:</th>
+      <td style="width:60%"><%= @lesson.lesson_name %></td>
+   </tr>
+   <tr>
+      <th>Instructor:</th>
+      <td><%= @lesson.instructor.full_name %> </td>
+   </tr>
+   <tr>
+      <th>Location:</th>
+      <td><%= @lesson.location.city_state %> </td>
+   </tr>
+   <tr>
+      <th>Skill Level:</th>
+      <td><%= @lesson.skill_level %></td>
+   </tr>
+   <tr>
+      <th>Hand Position:</th>
+      <td><%= @lesson.hand_position %> </td>
+   </tr>
+   <tr>
+      <th> </th>
+      <td> </td>
+   </tr>
+   
+</table>
+   
+    
+<table style="width:400px" cellpadding="2px" align="center">
 
    <tr>
       <td>
-         <hr><br>
+        <br> <hr><br>
       <font size="2px">
-      <b>Want to book another lesson? <%= link_to 'Book Lesson', new_lesson_path %></b><br>
+      <center><b><%= link_to 'Go to My Lesson Page', user_path %></b></center>
+
+
       <br>
-      <b>Need to make changes to this lesson?</b><br>
-      <%= link_to "Update Lesson", edit_lesson_path %> <br> &nbsp;&nbsp;&nbsp; 
-      <%= button_to "Delete Lesson", lesson_path(@lesson), method: :delete %>
-      <br><br>
-      
+      <b>Ready to schedule another lesson? &nbsp;
+      <%= link_to 'Book New Lesson', new_lesson_path %></b><br>
+      <b>Need to make changes to this lesson? &nbsp;
+      <%= link_to "Update Lesson", edit_lesson_path %></b> &nbsp;
+      <br> <br>
+     
+      <%= form_for @lesson, method: :delete do |f| %> <%= f.submit "Delete Lesson" %><% end %>
       </font>
       </td>
    </tr>

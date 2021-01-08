@@ -1,17 +1,69 @@
+<!DOCTYPE html>
+<html>
+<title>GolfLive!</title>
+<style>
+.lessonTable {
+   width: 1000px;
+   border-bottom: 1px solid #ddd;
+}
 
+</style>
 
+<br><br><br><br>
 
 </br>
 </br>
 <div class="container">
 <div class="row justify-content-left">
-<h1> Profile </h1>
+<center><h1>Welcome <%= @user.first_name %>!</h1></center>
 <hr>
-<h5>Full Name: <%= @user.full_name %></h5>
-<h5>Email: <%= @user.email %></h5>
-<h5>Phone Number: <%= @user.phone_number %></h5>
+<table style="width:240px" cellpadding="8px">
+   <tr>
+      <th style="width:40%">Name:</th>
+      <td style="width:60%"><%= @user.full_name %></td>
+   </tr>
+   <tr>
+      <th>Email:</th>
+      <td><%= @user.email %></td>
+   </tr>
+   <tr>
+      <th>Phone:</th>
+      <td><%= @user.phone_number %></td>
+   </tr>
+</table>
+<h3></h3>
+<br />
+<hr>
 
-</hr>
+<h3>Upcoming Lessons</h3>
+<div align="right"><b><%= link_to 'Book New Lesson', new_lesson_path %></b></div><br>
+<h3></h3>
+<table class="lessonTable" cellpadding="8px">
+   <tr>
+     
+      <th style="width:15%"> Date </th>
+      <th style="width:25%"> Lesson </th>
+      <th style="width:10%"> Time </th>
+      <th style="width:20%"> Instructor </th>
+      <th style="width:15%"> Location </th>
+      <th style="width:25%"> Update </th>
+     
+   </tr>
+   <tr>
+      <% @user.lessons.each do |lesson| %>
+      <td><%= link_to lesson.date, lesson_path(lesson.id) %></td>
+      <td><%= lesson.lesson_name %></td>
+      <td><%= lesson.time %></td>
+      <td><%= lesson.instructor.full_name %></td>
+      <td><%= lesson.location.city_state %></td>
+      <td><%= link_to "Edit", edit_lesson_path(lesson) %> &nbsp; | &nbsp; <%= link_to "Delete", lesson_path(lesson), method: :delete %></td>
+
+   </tr>
+      <% end %>
+</table>
+
+<h3></h3>
+<br />
 <hr>
 <div class="col-4">
 <%= button_to "Edit", edit_user_path, class: "btn btn-outline-dark form-control shadow rounded", method: :get %>
@@ -21,6 +73,5 @@
 </div>
 
 
-</hr>
 </div>
 </div>

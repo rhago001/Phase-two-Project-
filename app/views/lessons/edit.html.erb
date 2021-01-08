@@ -1,1 +1,47 @@
-<%= render 'form' %>
+<br><br><br><br><br><br>
+
+<center><h2>Lesson Registration Form</h2></center>
+<br>
+<table align="center">
+
+  <tr>
+      <td>
+      <br>
+
+<ul>
+<% if @lesson.errors.any? %>
+  <% @lesson.errors.full_messages.each do |err| %>
+    <li style="color:red"> <%=err %></li>
+    </ul>
+    <%end%>
+ <%end %>
+<%= form_for @lesson do |f| %>
+ 
+   <%# Date: <%=f.date_select :date %> 
+  <%# Date: <%=f.date_field :date %> 
+  Name: &nbsp; <%= f.collection_select :user_id, User.all, :id, :full_name, :prompt => 'Enter Full Name' %><br />
+   <br/>
+  Lesson Name: &nbsp; <%= f.select :lesson_name, [ "Front 9 - New Golfers", "Back 9 - Beginner Golfers", "Tee Up - Intermediate", "Tee Up - Experienced" ], :prompt => 'Select Lesson' %> <br />
+  <br/>
+  Instructor: &nbsp; <%= f.collection_select :instructor_id, Instructor.all, :id, :full_name, :prompt => 'Select Instructor' %><br />
+   <br/>
+  Date: &nbsp; <%= f.text_field :date %> <br />
+    <%# Date: <%=f.date_field :date %> 
+    <%# Ask about how to use date_field / validation %>
+  <br/>
+  Time: &nbsp; <%= f.select :time, [ '9:00 AM','10:00 AM','11:00 AM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM' ], :prompt => 'Select Time' %> <br />
+  <br/>
+  Location: &nbsp; <%=f.collection_select :location_id, Location.all, :id, :city_state %> <br />
+  <br/>
+  Skill Level: &nbsp; <%= f.select :skill_level, [ 'Beginner','Intermediate','Advanced' ], :prompt => 'Select Skill Level' %> <br/>
+  <br/> 
+  Hand Position: &nbsp; <%= f.select :hand_position, [ 'Right','Left' ], :prompt => 'Select One' %> <br/>
+  <br/>
+   
+
+   <%=f.submit 'Update' %>
+ <% end %>
+ 
+  </td>
+   </tr>
+ </table>

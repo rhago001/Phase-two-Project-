@@ -37,15 +37,14 @@ class LessonsController < ApplicationController
    end
 
    def destroy
-      @lesson = Lesson.find(params[:id])
-      @lesson.destroy
+      Lesson.find(params[:id]).destroy
       redirect_to user_path(session[:id])
    end
 
    private
 
    def lesson_params
-      params.require(:lesson).permit(:date, :time, :instructor_id, :user_id, :location_id, :skill_level, :hand_position)
+      params.require(:lesson).permit(:date, :time, :instructor_id, :user_id, :location_id, :skill_level, :hand_position, :lesson_name)
    end
    
 end
