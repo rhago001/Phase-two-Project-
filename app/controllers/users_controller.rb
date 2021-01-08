@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+   # before_action: not_logged_in only, :[:show]
+   
+   
    def home
 
    end 

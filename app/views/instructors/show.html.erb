@@ -12,8 +12,7 @@
 <b>Email: </b> &nbsp; <%= @instructor.email %><br>
 <br>
 <b>GolfLive Location: </b> &nbsp; 
-<%# <%= @instructor.instructor_location %>
+<%= @instructor.location.city_state %>
 
 </font>
 <hr>
-<%= link_to "Meet All Our Instructors", instructors_path %>

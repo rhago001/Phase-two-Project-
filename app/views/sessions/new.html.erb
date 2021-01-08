@@ -1,41 +1,44 @@
-<h1>Log In Page</h1>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+
+
+
+<h1 class="text-center mt-4">Log in</h1>
   
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-10">
 
-<ul>
-  <% if flash[:errors]%>
-    <li style="color:red"><%=flash[:errors] %>  </li>
-  <%end%>
-</ul>
 
+<% if @user.errors.any? %>
+<li style="color:red"> <%= flash[:errors] %> </li>
+<% end %>
 
-<%= form_for @user, :url => '/login' do |f| %>
+<%= form_for @user, :controller => 'sessions', :url => '/login', class: "shadow p-3 mb-3 bg-info rounded"  do |f| %>
   <div class="form-group row">
 
     <%= f.label :email, class: "col-2 col-form-label text-light" %>
     <div class="col-7">
 
-    <%= f.email_field :email, class: "form-control shadow rounded", placeholder: "Enter a username" %>
+    <%= f.text_field :email, class: "form-control shadow rounded", placeholder: "Enter your email" %>
     </div>
   </div>
   
   <div class="form-group row">
     <%= f.label :password, class: "col-2 col-form-label text-light" %>
    <div class="col-7">
-    <%= f.password_field :password, class: "form-control shadow rounded", placeholder: "Enter a username" %>
+    <%= f.password_field :password, class: "form-control shadow rounded", placeholder: "Enter your password" %>
     </div>
     </div>
     
    
     <div class="form-group row justify-content-center">
-    <%= f.submit class: "btn btn-outline-light btn-lg" %>
+    <%= f.submit "login", class: "btn btn-outline-dark-blue btn-lg" %>
+    
     </div>
-<% end %>
+  <% end %>
 </div>
 <div class="mb-1">
-<%# <%= link_to '[ Cancel and return to articles listing ]', users_path, class: "text-info" %> 
+ <center><%= link_to '[return to home ]', root_path, class: "text-info" %></center> 
 
 </div>
 </div>
