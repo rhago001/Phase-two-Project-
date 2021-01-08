@@ -9,6 +9,9 @@ class Lesson < ApplicationRecord
    # validates :time, presence: true 
    # validates :hand_position, :inclusion => { :in => %w(Fiction Non-Fiction) }
 
+   def name
+      list = [ "Front 9 - New Golfers", "Back 9 - Beginner Golfers", "Tee Up - Intermediate", "Tee Up - Experienced" ]
+   end
    
 
 end
