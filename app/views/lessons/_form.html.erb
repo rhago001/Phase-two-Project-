@@ -1,7 +1,12 @@
+<br><br><br><br><br><br>
 
+<center><h2>Lesson Registration Form</h2></center>
+<br>
+<table align="center">
 
-<h2>Lesson Sign-Up Form</h2>
-<br/>
+  <tr>
+      <td>
+      <br>
 
 <ul>
 <% if @lesson.errors.any? %>
@@ -14,20 +19,29 @@
  
    <%# Date: <%=f.date_select :date %> 
   <%# Date: <%=f.date_field :date %> 
-  Lesson Name: <%= f.select :lesson_name, [ 'Front 9 - New Golfers','Back 9 - Beginner Golfers','Tee Up - Intermediate', 'Tee Up - Experienced' ], :prompt => 'Select One' %> <br />
-  <br/>
-  Instructor: <%= f.collection_select :instructor_id, Instructor.all, :id, :full_name, :prompt => 'Select One' %><br />
+  Name: &nbsp; <%= f.collection_select :user_id, User.all, :id, :full_name, :prompt => 'Enter Full Name' %><br />
    <br/>
-  Date: <%= f.text_field :date %> <br />
+  Lesson Name: &nbsp; <%= f.select :lesson_name, [ 'Front 9 - New Golfers','Back 9 - Beginner Golfers','Tee Up - Intermediate', 'Tee Up - Experienced' ], :prompt => 'Select One' %> <br />
   <br/>
-  Time: <%= f.time_field :time %> <br />
+  Instructor: &nbsp; <%= f.collection_select :instructor_id, Instructor.all, :id, :full_name, :prompt => 'Select One' %><br />
+   <br/>
+  Date: &nbsp; <%= f.text_field :date %> <br />
+    <%# Date: <%=f.date_field :date %> 
+    <%# Ask about how to use date_field / validation %>
   <br/>
-  Location: <%=f.collection_select :location_id, Location.all, :id, :city_state %> <br />
+  Time: &nbsp; <%= f.time_field :time %> <br />
   <br/>
-  Skill Level: <%= f.select :skill_level, [ 'Beginner','Intermediate','Advanced' ], :prompt => 'Select One' %> <br/>
+  Location: &nbsp; <%=f.collection_select :location_id, Location.all, :id, :city_state %> <br />
+  <br/>
+  Skill Level: &nbsp; <%= f.select :skill_level, [ 'Beginner','Intermediate','Advanced' ], :prompt => 'Select One' %> <br/>
+  <br/> 
+  Hand Position: &nbsp; <%= f.select :hand_position, [ 'Right','Left' ], :prompt => 'Select One' %> <br/>
   <br/>
    
 
    <%=f.submit %>
  <%end %>
  
+  </td>
+   </tr>
+ </table>
