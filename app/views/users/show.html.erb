@@ -1,21 +1,24 @@
 
 
 
-
+</br>
+</br>
 <div class="container">
 <div class="row justify-content-left">
 <h1> Profile </h1>
 <hr>
-<h5>Full Name: </h4><p><%= @user.full_name %></p>
+<h5>Full Name: <%= @user.full_name %></h5>
 <h5>Email: <%= @user.email %></h5>
 <h5>Phone Number: <%= @user.phone_number %></h5>
 
 </hr>
 <hr>
-
-<%= button_to "Edit", edit_user_path %> 
-# <%= button_to "delete", logout_path, method: :delete %>
-<%= button_to "Log out", logout_path, method: :delete %>
+<div class="col-4">
+<%= button_to "Edit", edit_user_path, class: "btn btn-outline-dark form-control shadow rounded", method: :get %>
+<%= button_to "Delete", remove_path, class: "btn btn-outline-dark form-control shadow rounded", method: :delete %> 
+<%= button_to "Log out", logout_path, class: "btn btn-outline-dark form-control shadow rounded", method: :delete %>
+<center><%= link_to '[return to home ]', root_path, method: :get%></center> 
+</div>
 
 
 </hr>

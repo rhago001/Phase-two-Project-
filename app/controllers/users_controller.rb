@@ -1,14 +1,10 @@
 class UsersController < ApplicationController
-
-   # before_action: not_logged_in only, :[:show]
-   
-   
-   def home
-
-   end 
+   before_action :logged_in?, only: [:show]
+  
    
    def show
-      @user = User.find(params[:id])
+      
+      @user = User.find(session[:id])
    end
 
    def new
@@ -41,8 +37,10 @@ class UsersController < ApplicationController
    end
 
    def destroy
-      User.find(params[:id]).destroy
-      redirect_to home_path
+      # @user.destroy
+      # session[:user_id] = nil if @user == current_user
+      User.find(id: params[:id]).destroy
+      redirect_to root_path
    end
 
    private

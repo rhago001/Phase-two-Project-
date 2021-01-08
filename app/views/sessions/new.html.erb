@@ -1,6 +1,4 @@
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-
-
+</br></br></br></br></br></br></br>
 
 <h1 class="text-center mt-4">Log in</h1>
   
@@ -9,9 +7,9 @@
 <div class="col-10">
 
 
-<% if @user.errors.any? %>
-<li style="color:red"> <%= flash[:errors] %> </li>
-<% end %>
+<% if flash[:errors]%>
+   <center> <li style="color:red"><%=flash[:errors]%>  </li></center>
+<%end%>
 
 <%= form_for @user, :controller => 'sessions', :url => '/login', class: "shadow p-3 mb-3 bg-info rounded"  do |f| %>
   <div class="form-group row">

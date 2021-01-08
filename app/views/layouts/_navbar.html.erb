@@ -1,6 +1,6 @@
 
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,12 +10,18 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Lessons</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Classes</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Instructors</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/login">login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/signup">signup</a></li>
+                        <li class="nav-item"><%= link_to 'Home', root_path, class:"nav-link", method: :get %></li>
+
+                        <% if logged_in? %>
+                            <li class="nav-item"><%= link_to 'logout', logout_path, class:"nav-link", method: :delete %></li>
+  
+                        <%else%>
+                            <li class="nav-item"><%= link_to 'Log in', login_path, class:"nav-link", method: :get %></li>
+                            <li class="nav-item"><%= link_to 'Sign up', signup_path, class:"nav-link", method: :get %></li>
+                        </li>
+                        <%end%>
                     </ul>
                 </div>
             </div>
